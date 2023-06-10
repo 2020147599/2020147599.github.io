@@ -1,50 +1,50 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="welcome-message">
-      <h1 class="left">Find Your</h1>
-      <h1 class="right">New Friend</h1>
+<body class="body">
+  <div class="login-page">
+    <div class="form">
+      <form>
+        <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
+        <!-- ========== &#xf007 = user or user silhouette =========== -->
+        <input type="text" id="email" placeholder="&#xf007;  Email Address"/>
+        <input type="password" id="password" placeholder="&#xf023;  password"/>
+        <i class="fas fa-eye" onclick="show()"></i>
+        <br>
+        <br>
+        <button type="button" id="login_button">
+          LOGIN
+        </button>
+        <p class="message"></p>
+      </form>
+      <form class="login-form">
+        <button type="button" onclick="window.location.href='signup.html'">
+          SIGN UP
+        </button>
+      </form>
     </div>
+  </div>
 
-    <form>
-      <div class="container">
-        <p>Welcome back!</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first --> 
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
-        <input type="text" placeholder="Enter Email" name="email" required />
-
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-
-        <p class="term-conditions">
-          By logging into your account you agree to our
-          <a href="#">Terms & Privacy</a>.
-        </p>
-        <div>
-          <button type="button" class="logintbtn">Log In</button>
-        </div>
-      </div>
-    </form>
-    <a href="./signup.html">Get Started</a>
-  </body>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="login.js"></script>
+</body>
 </html>
