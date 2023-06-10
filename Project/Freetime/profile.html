@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Archivo Black", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
+
+      /* Header Styles */
+      .header {
+        background-color: rgba(235, 238, 231, 1);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+
+      .header .logo {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .header .search-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .header .search-bar input[type="text"] {
+        width: 200px;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      .header .notification {
+        color: #fff;
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      /* Main Content Styles */
+      .content {
+        margin: 100px auto auto;
+        padding: 20px;
+      }
+
+      .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-bottom: 20px;
+      }
+
+      .profile-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .profile-bio {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .profile-details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-details-item {
+        margin-right: 20px;
+      }
+
+      .profile-details-item span {
+        font-weight: bold;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: rgba(235, 238, 231, 1);
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .footer .footer-link {
+        text-decoration: none;
+        font-size: 18px;
+        margin: 0 10px;
+      }
+      .footer img {
+        width: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Finafren</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Search" />
+        <span class="notification">&#128276;</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="profile-container">
+        <div class="profile-picture"></div>
+        <h2 class="profile-name">John Doe</h2>
+        <p class="profile-bio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <div class="profile-details">
+          <div class="profile-details-item"><span>Followers:</span> 1000</div>
+          <div class="profile-details-sitem"><span>Following:</span> 500</div>
+          <div class="profile-details-item"><span>Posts:</span> 200</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="./home_feed.html" class="footer-link"
+        ><img src="./img/home.png" alt="" srcset=""
+      /></a>
+      <a href="./messages.html" class="footer-link"
+        ><img src="./img/paper-plane.png" alt="" srcset=""
+      /></a>
+      <a href="./profile.html" class="footer-link"
+        ><img src="./img/user.png" alt="" srcset=""
+      /></a>
+    </div>
+  </body>
+</html>

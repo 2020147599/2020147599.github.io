@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
+
+      /* Form Styles */
+      .container {
+        max-width: 320px;
+        margin: 100px auto;
+        padding: 3%;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="text"],
+      .form-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .form-group select {
+        height: 36px;
+      }
+
+      .form-group .time-slots {
+        margin-top: 10px;
+      }
+
+      .form-group .time-slots .time-slot {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .form-group .time-slots .time-slot input[type="text"] {
+        width: 100px;
+        margin-right: 10px;
+      }
+
+      .form-group .time-slots .add-time-slot-button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .form-group .time-slots .remove-time-slot-button {
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .form-group .submit-button {
+        margin-top: 20px;
+      }
+
+      .form-group .submit-button button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            placeholder="YYYY-MM-DD"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="college">College:</label>
+          <select id="college" name="college" required>
+            <option value="college1">College of Engineering</option>
+            <option value="college2">College of AI</option>
+            <option value="college3">College of Medicine</option>
+            <option value="college3">College of Business</option>
+            <option value="college3">College of Social Sciences</option>
+            <option value="college3">College of Music</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Free Time:</label>
+          <div class="time-slots">
+            <div class="time-slot">
+              <select name="day" required>
+                <option value="">Select Day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+              <select name="time" required>
+                <option value="">Select Time</option>
+                <option value="12:00 AM">12:00 AM</option>
+                <option value="01:00 AM">01:00 AM</option>
+                <option value="02:00 AM">02:00 AM</option>
+                <option value="03:00 AM">03:00 AM</option>
+                <option value="04:00 AM">04:00 AM</option>
+                <option value="05:00 AM">05:00 AM</option>
+                <option value="06:00 AM">06:00 AM</option>
+                <option value="07:00 AM">07:00 AM</option>
+                <option value="08:00 AM">08:00 AM</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="11:00 PM">11:00 PM</option>
+              </select>
+            </div>
+            <div class="time-slot">
+              <select name="day">
+                <option value="">Select Day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+              <select name="time">
+                <option value="">Select Time</option>
+                <option value="12:00 AM">12:00 AM</option>
+                <option value="01:00 AM">01:00 AM</option>
+                <option value="02:00 AM">02:00 AM</option>
+                <option value="03:00 AM">03:00 AM</option>
+                <option value="04:00 AM">04:00 AM</option>
+                <option value="05:00 AM">05:00 AM</option>
+                <option value="06:00 AM">06:00 AM</option>
+                <option value="07:00 AM">07:00 AM</option>
+                <option value="08:00 AM">08:00 AM</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="11:00 PM">11:00 PM</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group submit-button">
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Access the submit button element
+      var submitButton = document.querySelector(".submit-button button");
+
+      // Handle submit button click
+      submitButton.addEventListener("click", function () {
+        // Submit the form
+        signupForm.submit();
+      });
+
+      // Handle form submission
+      signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get the form data
+        var gender = document.getElementById("gender").value;
+        var dob = document.getElementById("dob").value;
+        var college = document.getElementById("college").value;
+        var timeSlots = [];
+        var timeSlotElements = document.getElementsByClassName("time-slot");
+        for (var i = 0; i < timeSlotElements.length; i++) {
+          var day =
+            timeSlotElements[i].querySelector('select[name="day"]').value;
+          var time = timeSlotElements[i].querySelector(
+            'select[name="time"]'
+          ).value;
+          if (day && time) {
+            timeSlots.push({
+              day: day,
+              time: time,
+            });
+          }
+        }
+
+        // Save the data to Firestore
+        var db = firebase.firestore();
+        db.collection("users")
+          .add({
+            gender: gender,
+            dob: dob,
+            college: college,
+            timeSlots: timeSlots,
+          })
+          .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            // Redirect to another page or display success message
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+            // Display error message to the user
+          });
+
+        // Redirect to the homepage
+        window.location.href = "./home_feed.html";
+      });
+    </script>
+  </body>
+</html>

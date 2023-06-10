@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Messaging Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Archivo Black", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(245, 245, 245, 1);
+        color: rgba(34, 39, 37, 1);
+      }
+
+      /* Header Styles */
+      .header {
+        background-color: rgba(235, 238, 231, 1);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .header .logo {
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      /* Main Content Styles */
+      .content {
+        margin-top: 60px;
+        padding: 20px;
+      }
+
+      #message-container {
+        margin-bottom: 20px;
+      }
+
+      .message {
+        background-color: rgba(245, 245, 245, 1);
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      .sender-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .message-text {
+        color: #333;
+      }
+
+      #message-input {
+        display: flex;
+        align-items: center;
+      }
+
+      #message-input input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      #message-input button {
+        padding: 8px 16px;
+        background-color: rgba(235, 238, 231, 1);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: rgba(235, 238, 231, 1);
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .footer .footer-link {
+        text-decoration: none;
+        font-size: 18px;
+        margin: 0 10px;
+      }
+      .footer img {
+        width: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Finafren</h2>
+    </div>
+
+    <div class="content">
+      <div id="message-container"></div>
+      <div id="message-input">
+        <input
+          type="text"
+          id="message-text"
+          placeholder="Type your message..."
+        />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="./home_feed.html" class="footer-link"
+        ><img src="./img/home.png" alt="" srcset=""
+      /></a>
+      <a href="./messages.html" class="footer-link"
+        ><img src="./img/paper-plane.png" alt="" srcset=""
+      /></a>
+      <a href="./profile.html" class="footer-link"
+        ><img src="./img/user.png" alt="" srcset=""
+      /></a>
+    </div>
+
+    <script src="https://static.sendbird.com/sample/quick-start/SendBird.min.js"></script>
+    <script>
+      // Your Sendbird application ID
+      var appId = "YOUR_APP_ID";
+
+      // Initialize Sendbird
+      var sb = new SendBird({ appId: appId });
+
+      // Connect to Sendbird
+      sb.connect("USER_ID", function (user, error) {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log("Connected to Sendbird");
+        }
+      });
+
+      // Retrieve message threads from Sendbird
+      var messageContainer = document.getElementById("message-container");
+
+      function retrieveMessages() {
+        var channelUrl = "SEND_BIRD_CHANNEL_URL";
+
+        sb.GroupChannel.getChannel(channelUrl, function (channel, error) {
+          if (error) {
+            console.error(error);
+          } else {
+            channel.getMessagesByTimestamp(
+              0,
+              30,
+              true,
+              function (messages, error) {
+                if (error) {
+                  console.error(error);
+                } else {
+                  renderMessages(messages);
+                }
+              }
+            );
+          }
+        });
+      }
+
+      function renderMessages(messages) {
+        messageContainer.innerHTML = "";
+
+        messages.forEach(function (message) {
+          var messageElement = document.createElement("div");
+          messageElement.classList.add("message");
+
+          var senderNameElement = document.createElement("div");
+          senderNameElement.textContent = message.sender.nickname;
+          senderNameElement.classList.add("sender-name");
+
+          var messageTextElement = document.createElement("div");
+          messageTextElement.textContent = message.message;
+          messageTextElement.classList.add("message-text");
+
+          messageElement.appendChild(senderNameElement);
+          messageElement.appendChild(messageTextElement);
+
+          messageContainer.appendChild(messageElement);
+        });
+      }
+
+      retrieveMessages();
+
+      // Send a message using Sendbird
+      var sendButton = document.getElementById("send-button");
+      var messageText = document.getElementById("message-text");
+
+      sendButton.addEventListener("click", function () {
+        var message = messageText.value;
+
+        var channelUrl = "SEND_BIRD_CHANNEL_URL";
+
+        sb.GroupChannel.getChannel(channelUrl, function (channel, error) {
+          if (error) {
+            console.error(error);
+          } else {
+            channel.sendUserMessage(message, function (message, error) {
+              if (error) {
+                console.error(error);
+              } else {
+                messageText.value = "";
+                retrieveMessages();
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

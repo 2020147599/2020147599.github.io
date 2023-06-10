@@ -1,0 +1,86 @@
+* {
+  max-width: 430px;
+  max-height: 932px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  margin-top: 10%;
+  color: rgba(34, 39, 37, 1);
+  background-color: rgba(245, 245, 245, 1);
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 42px;
+  width: 50%;
+}
+.right {
+  margin: 0 15% 0 0;
+  text-align: right;
+  position: relative;
+  left: 35%;
+}
+.left {
+  margin: 0 0 0 15%;
+  text-align: left;
+}
+p {
+  color: rgba(129, 134, 127, 1);
+}
+input {
+  background-color: rgba(228, 230, 195, 1);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+::placeholder {
+  color: rgba(137, 152, 120, 1);
+}
+a {
+  text-decoration: none;
+  font-size: 18px;
+}
+a:link {
+  color: rgba(34, 39, 37, 1);
+}
+a:visited {
+  color: rgba(34, 39, 37, 1);
+}
+
+.term-conditions {
+  width: 70%;
+  font-size: 16px;
+  color: rgba(134, 134, 134, 1);
+}
+
+.term-conditions a {
+  font-size: 16px;
+}
+
+button {
+  background-color: rgba(137, 152, 120, 1);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 18px;
+  margin: 4px 2px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 70%;
+}

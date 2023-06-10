@@ -1,0 +1,86 @@
+* {
+  max-width: 430px;
+  max-height: 932px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  color: rgba(34, 39, 37, 1);
+  background-color: rgba(245, 245, 245, 1);
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 16px;
+}
+
+main {
+  background-color: blue;
+}
+
+img {
+  width: 30px;
+}
+
+.top-nav {
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.search-bar {
+  margin: 0;
+}
+.search-bar input {
+  background-color: rgba(245, 245, 245, 1);
+  border: solid 1px rgba(235, 238, 231, 1);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Archivo Black", sans-serif;
+  border-radius: 30px;
+  padding: 15px 32px;
+}
+
+.right {
+  width: auto;
+  margin: 0;
+  text-align: right;
+  position: relative;
+  left: 10%;
+}
+
+.right img {
+  margin: 0 10px 0 10px;
+}
+
+h1 {
+  font-size: 42px;
+  width: 50%;
+}
+
+p {
+  color: rgba(129, 134, 127, 1);
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+}
+a:link {
+  color: rgba(34, 39, 37, 1);
+}
+a:visited {
+  color: rgba(34, 39, 37, 1);
+}
+
+.term-conditions {
+  width: 70%;
+  font-size: 16px;
+  color: rgba(134, 134, 134, 1);
+}
+
+.term-conditions a {
+  font-size: 16px;
+}
